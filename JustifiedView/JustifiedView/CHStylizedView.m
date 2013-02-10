@@ -86,6 +86,10 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self reloadData];
+}
 
 - (void)reloadData
 {
@@ -390,7 +394,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if ([stylizedView.delegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
-        [stylizedView.delegate scrollViewDidEndDragging:stylizedView willDecelerate:stylizedView];
+        [stylizedView.delegate scrollViewDidEndDragging:stylizedView willDecelerate:decelerate];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
