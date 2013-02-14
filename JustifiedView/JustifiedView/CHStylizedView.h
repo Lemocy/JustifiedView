@@ -92,6 +92,7 @@ typedef enum {
     NSMutableDictionary *cellCache; // reuseIdentifier => NSMutableArray
     NSSet *visibleCellInfo;
     CHStylizedViewUIScrollViewDelegate *delegateObj;
+    CGFloat longerEdge_;
 }
 
 @property (nonatomic, unsafe_unretained) id<CHStylizedViewDelegate> delegate;

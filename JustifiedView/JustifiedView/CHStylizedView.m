@@ -88,7 +88,14 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    CGFloat LongerEdge = self.bounds.size.width > self.bounds.size.height? self.bounds.size.width:self.bounds.size.height;
+    if (infoForCells.count) {
+        if (ABS(longerEdge_ - LongerEdge) < 1) {
+            return;
+        }
+    }
     [self reloadData];
+    longerEdge_ = LongerEdge;
 }
 
 - (void)reloadData
